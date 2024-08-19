@@ -4,8 +4,8 @@ use App\Http\Controllers\ContatoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/user', function (Request $request) {
-//     return $request->user();
-// })->middleware('auth:sanctum');
+Route::get('/', function () {
+    return json_encode(['status' => 200, 'retorno' => 'Ok']);
+});
 
-Route::post('contato/especialista/create', [ContatoController::class, 'criar']);
+Route::post('contato', [ContatoController::class, 'criar']);
