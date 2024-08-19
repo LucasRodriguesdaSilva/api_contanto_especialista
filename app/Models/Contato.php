@@ -28,10 +28,15 @@ class Contato extends Model implements ContatoInterface
      * Cadastra os dados importantes e retorna o objeto contato
      * 
      * @param array $data
-     * @return App\Models\Contato
+     * @return Contato
      */
     static public function cadastrar(array $data): Contato
     {
         return Contato::create($data);
+    }
+
+    public function servico()
+    {
+        return $this->hasOne(servico::class, 'id', 'servico_id');
     }
 }

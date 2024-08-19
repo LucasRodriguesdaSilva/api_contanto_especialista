@@ -24,8 +24,14 @@ class ContatoController extends Controller
         try {
             $contato = Contato::cadastrar($dados);
             DB::commit();
+            
+            Utils::enviarEmailsUsuarioEspecialista($contato);
 
-            return ApiResponseHelper::sendResponse(['ticket' => $contato->ticket],'Obrigado pelo Contato. Um Ticket foi gerado e enviado para o E-mail informado!',201);
+            return ApiResponseHelper::sendResponse(
+                ['ticket' => $contato->ticket],
+                'Obrigado pelo Contato. As informações da Solicitação foram enviadas para o E-mail informado!',
+                201
+            );
         } catch (\Throwable $th) {
             return ApiResponseHelper::rollback($th, $th->getMessage());
         }
