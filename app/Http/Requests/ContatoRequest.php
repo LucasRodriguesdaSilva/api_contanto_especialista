@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\ApiResponseHelper;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -31,7 +32,8 @@ class ContatoRequest extends FormRequest
             'telefone' => 'nullable',
             'cidade' => 'required|string',
             'estado' => 'required|string',
-            'servico_id' => 'required|exists:servicos,id'
+            'servico_id' => 'required|exists:servicos,id',
+            'mensagem' => 'required'
         ];
     }
 
@@ -50,16 +52,18 @@ class ContatoRequest extends FormRequest
             'estado.required' => 'O campo Estado é obrigatório.',
             'estado.string' => 'O campo Cidade precisa ser um texto.',
             'servico_id.required' => 'O campo Serviço é obrigatório.',
-            'servico_id.exists' => 'O ID do serviço não exista na lista'
+            'servico_id.exists' => 'O ID do serviço não exista na lista',
+            'mensagem.required' => "Por favor, adicione a mensagem"
         ];
     }
 
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json([
-            'success' => false,
-            'message' => 'Validation errors',
-            'data' => $validator->errors()
-        ],422));
+        ApiResponseHelper::throw(
+            "Erro na validação",
+            $validator->errors(),
+            'Validation errors',
+            422
+        );
     }
 }
