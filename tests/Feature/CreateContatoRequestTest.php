@@ -18,7 +18,7 @@ class CreateContatoRequestTest extends TestCase
         $response = $this->post('/api/contato', ['nome' => 'teste 1']);
 
         $response->assertStatus(422)
-            ->assertJsonFragment(['success' => false, 'message' => "Validation errors"]);
+            ->assertJsonFragment(['sucesso' => false, 'mensagem' => "Validation errors"]);
     }
 
     /**
@@ -39,7 +39,7 @@ class CreateContatoRequestTest extends TestCase
         ]);
 
         $response->assertStatus(422)
-            ->assertJsonFragment(['success' => false, 'message' => "Validation errors"]);
+            ->assertJsonFragment(['sucesso' => false, 'mensagem' => "Validation errors"]);
     }
 
 
