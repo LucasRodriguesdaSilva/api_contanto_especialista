@@ -26,11 +26,12 @@ return new class extends Migration
             $table->string('nome');
             $table->string('empresa');
             $table->string('email');
-            $table->string('telefone');
+            $table->string('telefone')->nullable(true);
             $table->string('celular');
             $table->string('cidade');
             $table->string('estado');
-            $table->string('ticket',50);
+            $table->string('ticket',50)->unique();
+            $table->text("mensagem");
             $table->foreignId('servico_id')->references('id')->on('servicos');
             $table->timestamps();
         });
