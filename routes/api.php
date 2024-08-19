@@ -8,4 +8,4 @@ Route::get('/', function () {
     return json_encode(['status' => 200, 'retorno' => 'Ok']);
 });
 
-Route::post('contato', [ContatoController::class, 'criar']);
+Route::post('/contato', [ContatoController::class, 'criar']);
