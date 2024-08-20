@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "adaa2cc8-3ef5-4b21-8b2f-4efd2e9f69bf",
+		"name": "Fale com um Especialista",
+		"description": "Esta API permite que usuários enviem solicitações de contato para especialistas com base em serviços específicos. A API recebe informações via formulário e, com base no serviço solicitado, envia um e-mail para o especialista correspondente e uma confirmação para o usuário.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33094159"
+	},
+	"item": [
+		{
+			"name": "Buscas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}contato/",
+					"host": [
+						"{{url}}contato"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Todos itens",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/contato",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"contato"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:15:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sucesso\": true,\n    \"dados\": [\n        {\n            \"id\": 1,\n            \"nome\": \"lucas\",\n            \"empresa\": \"teste\",\n            \"email\": \"teste@teste1.com\",\n            \"telefone\": null,\n            \"celular\": \"(88) 1111-1111\",\n            \"cidade\": \"cidade teste\",\n            \"estado\": \"Estado teste\",\n            \"ticket\": \"ABC1202408192126\",\n            \"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\",\n            \"servico_id\": 1,\n            \"created_at\": \"2024-08-20T00:23:26.000000Z\",\n            \"updated_at\": \"2024-08-20T00:23:26.000000Z\",\n            \"servico\": {\n                \"id\": 1,\n                \"servico\": \"Servico 1\",\n                \"especialista\": \"especialista 1\",\n                \"email\": \"email.1@teste.com\",\n                \"ticket_id\": \"ABC1\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"nome\": \"lucas\",\n            \"empresa\": \"teste\",\n            \"email\": \"teste@teste1.com\",\n            \"telefone\": null,\n            \"celular\": \"(88) 1111-1111\",\n            \"cidade\": \"cidade teste\",\n            \"estado\": \"Estado teste\",\n            \"ticket\": \"ABC1202408192131\",\n            \"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\",\n            \"servico_id\": 1,\n            \"created_at\": \"2024-08-20T00:45:31.000000Z\",\n            \"updated_at\": \"2024-08-20T00:45:31.000000Z\",\n            \"servico\": {\n                \"id\": 1,\n                \"servico\": \"Servico 1\",\n                \"especialista\": \"especialista 1\",\n                \"email\": \"email.1@teste.com\",\n                \"ticket_id\": \"ABC1\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"nome\": \"lucas\",\n            \"empresa\": \"teste\",\n            \"email\": \"teste@teste1.com\",\n            \"telefone\": null,\n            \"celular\": \"(88) 1111-1111\",\n            \"cidade\": \"cidade teste\",\n            \"estado\": \"Estado teste\",\n            \"ticket\": \"ABC1202408192132\",\n            \"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\",\n            \"servico_id\": 1,\n            \"created_at\": \"2024-08-20T00:45:32.000000Z\",\n            \"updated_at\": \"2024-08-20T00:45:32.000000Z\",\n            \"servico\": {\n                \"id\": 1,\n                \"servico\": \"Servico 1\",\n                \"especialista\": \"especialista 1\",\n                \"email\": \"email.1@teste.com\",\n                \"ticket_id\": \"ABC1\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"nome\": \"lucas\",\n            \"empresa\": \"teste\",\n            \"email\": \"teste@teste1.com\",\n            \"telefone\": null,\n            \"celular\": \"(88) 1111-1111\",\n            \"cidade\": \"cidade teste\",\n            \"estado\": \"Estado teste\",\n            \"ticket\": \"ABC1202408192133\",\n            \"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\",\n            \"servico_id\": 1,\n            \"created_at\": \"2024-08-20T00:45:33.000000Z\",\n            \"updated_at\": \"2024-08-20T00:45:33.000000Z\",\n            \"servico\": {\n                \"id\": 1,\n                \"servico\": \"Servico 1\",\n                \"especialista\": \"especialista 1\",\n                \"email\": \"email.1@teste.com\",\n                \"ticket_id\": \"ABC1\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"nome\": \"lucas\",\n            \"empresa\": \"teste\",\n            \"email\": \"teste@teste1.com\",\n            \"telefone\": null,\n            \"celular\": \"(88) 1111-1111\",\n            \"cidade\": \"cidade teste\",\n            \"estado\": \"Estado teste\",\n            \"ticket\": \"ABC2202408192112\",\n            \"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\",\n            \"servico_id\": 2,\n            \"created_at\": \"2024-08-20T00:48:12.000000Z\",\n            \"updated_at\": \"2024-08-20T00:48:12.000000Z\",\n            \"servico\": {\n                \"id\": 2,\n                \"servico\": \"Servico 2\",\n                \"especialista\": \"especialista 1\",\n                \"email\": \"email.2@teste.com\",\n                \"ticket_id\": \"ABC2\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        }\n    ],\n    \"mensagem\": \"\"\n}"
+				},
+				{
+					"name": "Buscar Pelo Ticket",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/contato/ABC2202408192112",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"contato",
+								"ABC2202408192112"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:16:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sucesso\": true,\n    \"dados\": {\n        \"id\": 5,\n        \"nome\": \"lucas\",\n        \"empresa\": \"teste\",\n        \"email\": \"teste@teste1.com\",\n        \"telefone\": null,\n        \"celular\": \"(88) 1111-1111\",\n        \"cidade\": \"cidade teste\",\n        \"estado\": \"Estado teste\",\n        \"ticket\": \"ABC2202408192112\",\n        \"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\",\n        \"servico_id\": 2,\n        \"created_at\": \"2024-08-20T00:48:12.000000Z\",\n        \"updated_at\": \"2024-08-20T00:48:12.000000Z\",\n        \"servico\": {\n            \"id\": 2,\n            \"servico\": \"Servico 2\",\n            \"especialista\": \"especialista 1\",\n            \"email\": \"email.2@teste.com\",\n            \"ticket_id\": \"ABC2\",\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    \"mensagem\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Criação do contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nome\": \"lucas\",\r\n\t\"email\": \"teste@teste1.com\",\r\n\t\"servico_id\": 2,\r\n\t\"empresa\": \"\",\r\n\t\"celular\": \"\",\r\n\t\"cidade\": \"cidade teste\",\r\n\t\"estado\": \"Estado teste\",\r\n\t\"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}contato",
+					"host": [
+						"{{url}}contato"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sucesso",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"lucas\",\r\n\t\"email\": \"teste@teste1.com\",\r\n\t\"servico_id\": 2,\r\n\t\"empresa\": \"teste\",\r\n\t\"celular\": \"(88) 1111-1111\",\r\n\t\"cidade\": \"cidade teste\",\r\n\t\"estado\": \"Estado teste\",\r\n\t\"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/contato",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"contato"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:19:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sucesso\": true,\n    \"dados\": {\n        \"ticket\": \"ABC2202408192213\"\n    },\n    \"mensagem\": \"Obrigado pelo Contato. As informações da Solicitação foram enviadas para o E-mail informado!\"\n}"
+				},
+				{
+					"name": "Falha",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"lucas\",\r\n\t\"email\": \"teste@teste1.com\",\r\n\t\"servico_id\": 2,\r\n\t\"empresa\": \"\",\r\n\t\"celular\": \"\",\r\n\t\"cidade\": \"cidade teste\",\r\n\t\"estado\": \"Estado teste\",\r\n\t\"mensagem\": \"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/contato",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"contato"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:19:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sucesso\": false,\n    \"mensagem\": \"Validation errors\",\n    \"dados\": {\n        \"empresa\": [\n            \"O campo Empresa é obrigatório.\"\n        ],\n        \"celular\": [\n            \"O campo Celular é obrigatório.\"\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/api/",
+			"type": "string"
+		}
+	]
+}
