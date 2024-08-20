@@ -13,10 +13,25 @@ use Illuminate\Support\Facades\DB;
 
 class ContatoController extends Controller
 {
-    //
-    function criar(ContatoRequest $request) {
+    public function index() 
+    {
+        $dados = Contato::buscarTodos();
+
+        return ApiResponseHelper::sendResponse($dados ,'',200);                        
+    }
+
+    public function detalhar($ticket)
+    {
+        $item = Contato::getByTicket($ticket);
+
+        return ApiResponseHelper::sendResponse($item, '', 200);
+    }
+
+
+    public function criar(ContatoRequest $request)
+    {
         $dados = $request->validated();
-        
+
         $servico = Servico::find($dados['servico_id']);
         $dados['ticket'] = Utils::gerarTicket($servico);
 
@@ -24,7 +39,7 @@ class ContatoController extends Controller
         try {
             $contato = Contato::cadastrar($dados);
             DB::commit();
-            
+
             Utils::enviarEmailsUsuarioEspecialista($contato);
 
             return ApiResponseHelper::sendResponse(

@@ -24,6 +24,18 @@ class Contato extends Model implements ContatoInterface
         'mensagem'
     ];
 
+    static public function buscarTodos()
+    {
+        return self::with('servico')->get();
+    }
+
+    static public function getByTicket($ticket): Contato
+    {
+        return self::with('servico')
+            ->where('ticket', $ticket)
+            ->first();
+    }
+
     /**
      * Cadastra os dados importantes e retorna o objeto contato
      * 
@@ -37,6 +49,6 @@ class Contato extends Model implements ContatoInterface
 
     public function servico()
     {
-        return $this->hasOne(servico::class, 'id', 'servico_id');
+        return $this->hasOne(Servico::class, 'id', 'servico_id');
     }
 }
