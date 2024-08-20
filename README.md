@@ -2,18 +2,6 @@
 
 Esta API permite que usuários enviem solicitações de contato para especialistas com base em serviços específicos. A API recebe informações via formulário e, com base no serviço solicitado, envia um e-mail para o especialista correspondente e uma confirmação para o usuário.
 
-## Índice
-
-- [Instalação](#instalação)
-- [Configuração](#configuração)
-- [Rotas da API](#rotas-da-api)
-  - [Criar Contato](#criar-contato)
-  - [Buscar Contato por ID ou UID](#buscar-contato-por-id-ou-uid)
-- [Estrutura do Banco de Dados](#estrutura-do-banco-de-dados)
-- [Testes](#testes)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-
 ## Instalação
 
 1. Clone este repositório:
