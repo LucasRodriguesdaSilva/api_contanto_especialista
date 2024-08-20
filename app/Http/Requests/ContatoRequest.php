@@ -37,6 +37,10 @@ class ContatoRequest extends FormRequest
         ];
     }
 
+    /**
+     * Mensagem customizadas dos erros de validação
+     */
+
     public function messages()
     {
         return [

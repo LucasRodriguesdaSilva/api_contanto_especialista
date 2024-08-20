@@ -24,12 +24,22 @@ class Contato extends Model implements ContatoInterface
         'mensagem'
     ];
 
+    /**
+     * Busca todos os itens salvos
+     */
     static public function buscarTodos()
     {
         return self::with('servico')->get();
     }
 
-    static public function getByTicket($ticket): Contato
+    /**
+     * Busca pelo Ticket cadastrado
+     * 
+     * @param string $ticket
+     * Ticket gerado
+     * @return Contato
+     */
+    static public function getByTicket(string $ticket): Contato
     {
         return self::with('servico')
             ->where('ticket', $ticket)
